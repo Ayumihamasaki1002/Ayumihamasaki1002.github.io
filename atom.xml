@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>WELCOME TO MY BLOG!</title>
   
-  
+  <subtitle>a</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-26T08:00:53.558Z</updated>
+  <updated>2022-10-15T13:39:49.001Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,17 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vue2.0学习笔记</title>
+    <link href="http://example.com/2022/10/15/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2022/10/15/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2022-10-15T11:32:09.000Z</published>
+    <updated>2022-10-15T13:39:49.001Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue核心"><a href="#Vue核心" class="headerlink" title="Vue核心"></a>Vue核心</h1><h2 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//模板语法例子：</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;root&quot;&gt;</span><br><span class="line">&#123;&#123;demo&#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        const vm = new Vue(&#123;</span><br><span class="line">            el:&#x27;#root&#x27;,</span><br><span class="line">            data:&#123;</span><br><span class="line">  demo:&#x27;&#x27;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure><h3 id="插值语法"><a href="#插值语法" class="headerlink" title="插值语法"></a>插值语法</h3><ol><li>功能: 用于解析标签体内容</li><li>语法:  ，xxxx 会作为 js 表达式解析</li></ol><h3 id="指令语法"><a href="#指令语法" class="headerlink" title="指令语法"></a>指令语法</h3><ol><li>功能: 解析标签属性、解析标签体内容、绑定事件</li><li>举例：v-bind:href &#x3D; ‘xxxx’ ，xxxx 会作为 js 表达式被解析</li><li>说明：Vue 中有有很多的指令，此处只是用 v-bind 举个例子</li></ol><h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><h3 id="单项绑定"><a href="#单项绑定" class="headerlink" title="单项绑定"></a>单项绑定</h3><ol><li>语法：v-bind:href &#x3D;”xxx” 或简写为 :href</li><li>特点：数据只能从 data 流向页面</li></ol><h3 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h3><ol><li><p>语法：v-mode:value&#x3D;”xxx” 或简写为 v-model&#x3D;”xxx”</p></li><li><p>特点：数据不仅能从 data 流向页面，还能从页面流向 data</p></li></ol><h2 id="MVVM模型"><a href="#MVVM模型" class="headerlink" title="MVVM模型"></a>MVVM模型</h2><ol><li>M：模型(Model) ：对应 data 中的数据</li><li>V：视图(View) ：模板</li><li>VM：视图模型(ViewModel) ： Vue 实例对象</li></ol><h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><h3 id="绑定监听"><a href="#绑定监听" class="headerlink" title="绑定监听"></a>绑定监听</h3><ol><li>v-on:xxx&#x3D;”fun”</li><li>@xxx&#x3D;”fun”</li><li>@xxx&#x3D;”fun(参数)”</li><li>默认事件形参: event</li><li>隐含属性对象: $event</li></ol><h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3><ol><li>.prevent : 阻止事件的默认行为 event.preventDefault()</li><li>.stop : 停止事件冒泡 event.stopPropagation()</li></ol><h3 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h3><ol><li>keycode : 操作的是某个 keycode 值的键</li><li>.keyName : 操作的某个按键名的键(少部分)</li></ol><h2 id="计算属性与监视"><a href="#计算属性与监视" class="headerlink" title="计算属性与监视"></a>计算属性与监视</h2><h3 id="计算属性-computed"><a href="#计算属性-computed" class="headerlink" title="计算属性-computed"></a>计算属性-computed</h3><ol><li>要显示的数据不存在，要通过计算得来。</li><li>在 computed 对象中定义计算属性。</li><li>在页面中使用来显示计算的结果</li></ol><h3 id="监视属性-watch"><a href="#监视属性-watch" class="headerlink" title="监视属性-watch"></a>监视属性-watch</h3><ol><li>通过通过 vm 对象的$watch()或 watch 配置来监视指定的属性</li><li>当属性变化时, 回调函数自动调用, 在函数内部进行计算</li></ol><h2 id="class-与-style-绑定"><a href="#class-与-style-绑定" class="headerlink" title="class 与 style 绑定"></a>class 与 style 绑定</h2><h3 id="class-绑定"><a href="#class-绑定" class="headerlink" title="class 绑定"></a>class 绑定</h3><ol><li>:class&#x3D;’xxx’</li><li>表达式是字符串: ‘classA’</li><li>表达式是对象: {classA:isA, classB: isB</li><li>表达式是数组: [‘classA’, ‘classB’]</li></ol><h3 id="style-绑定"><a href="#style-绑定" class="headerlink" title="style 绑定"></a>style 绑定</h3><ol><li><p>style&#x3D;”{ color: activeColor, fontSize: fontSize + ‘px’ }”</p></li><li><p>其中 activeColor&#x2F;fontSize 是 data 属性</p></li></ol><h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><h3 id="条件渲染指令"><a href="#条件渲染指令" class="headerlink" title="条件渲染指令"></a>条件渲染指令</h3><ol><li>v-if 与 v-else</li><li>v-show</li></ol><h4 id="比较-v-if-与-v-show"><a href="#比较-v-if-与-v-show" class="headerlink" title="比较 v-if 与 v-show"></a>比较 v-if 与 v-show</h4><ol><li>如果需要频繁切换 v-show 较好</li><li>当条件不成立时, v-if 的所有子节点不会解析(项目中使用)</li></ol><h3 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h3><pre><code>遍历数组: v-for / index遍历对象: v-for / key</code></pre><h3 id="收集表单数据"><a href="#收集表单数据" class="headerlink" title="收集表单数据"></a>收集表单数据</h3><pre><code>input 框中若type为text，则v-model收集的是value值，用户输入的就是value值。input框中若type为radio,则v-model收集的是value值，且用户要为标签配置value值。input框中若type为checkbox,则v-model默认收集的是布尔值（T/F），若v-model的初始值为数组，则收集的是value组成的数组</code></pre><p>   注：v-model的三个修饰符：</p><pre><code>lazy：失去焦点再收集数据number：输入字符串转为有效的数字trim：输入首尾空格过滤</code></pre><h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//过滤器在容器中的两种形式：</span><br><span class="line">&lt;!-- 过滤器实现 --&gt;</span><br><span class="line">        &lt;h3&gt;现在是：&#123;&#123;time | timeFormater&#125;&#125;&lt;/h3&gt;</span><br><span class="line">&lt;!-- 过滤器实现传参 --&gt;</span><br><span class="line">        &lt;h3&gt;现在是：&#123;&#123;time | timeFormater(&#x27;YYYY&#x27;) | mySlice&#125;&#125;&lt;/h3&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//局部过滤器</span><br><span class="line">是在Vue实例中的配置对象 </span><br><span class="line">filters:&#123;</span><br><span class="line">                timeFormater(value,str=&#x27; YYYY年MM月DD日HH时mm分ss秒&#x27;)&#123;</span><br><span class="line">                    // return dayjs(value).format(&#x27;YYYY年MM月DD日HH时mm分ss秒&#x27;) ;</span><br><span class="line">                    return dayjs(value).format(str)</span><br><span class="line"></span><br><span class="line">                &#125;,</span><br><span class="line"></span><br><span class="line">//全局过滤器</span><br><span class="line">部署在脚本框内即可</span><br><span class="line">        Vue.filter(&#x27;mySlice&#x27;,function(value)&#123;</span><br><span class="line">            return value.slice(0,4)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="内置指令与自定义指令"><a href="#内置指令与自定义指令" class="headerlink" title="内置指令与自定义指令"></a>内置指令与自定义指令</h3><h4 id="常用内置指令"><a href="#常用内置指令" class="headerlink" title="常用内置指令"></a>常用内置指令</h4><ol><li>v-text : 更新元素的 textContent</li><li>v-html : 更新元素的 innerHTML</li><li>v-if : 如果为 true, 当前标签才会输出到页面</li><li>v-else: 如果为 false, 当前标签才会输出到页面</li><li>v-show : 通过控制 display 样式来控制显示&#x2F;隐藏</li><li>v-for : 遍历数组&#x2F;对象</li><li>v-on : 绑定事件监听, 一般简写为@</li><li>v-bind : 绑定解析表达式, 可以省略 v-bind</li><li>v-model : 双向数据绑定</li><li>v-cloak : 防止闪现, 与 css 配合: [v-cloak] { display:</li></ol><h4 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h4><h5 id="注册全局指令"><a href="#注册全局指令" class="headerlink" title="注册全局指令"></a>注册全局指令</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(&#x27;my-directive&#x27;, function(el, binding)&#123;</span><br><span class="line">el.innerHTML = binding.value.toupperCase()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><h5 id="注册局部指令"><a href="#注册局部指令" class="headerlink" title="注册局部指令"></a>注册局部指令</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">directives : &#123;</span><br><span class="line">&#x27;my-directive&#x27; : &#123;</span><br><span class="line">bind (el, binding) &#123;</span><br><span class="line">el.innerHTML = binding.value.toupperCase()</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>使用指令</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-my-directive=&#x27;xxx&#x27;</span><br></pre></td></tr></table></figure><h3 id="Vue-实例生命周期"><a href="#Vue-实例生命周期" class="headerlink" title="Vue 实例生命周期"></a>Vue 实例生命周期</h3><h4 id="vue-生命周期分析"><a href="#vue-生命周期分析" class="headerlink" title="vue 生命周期分析"></a>vue 生命周期分析</h4><h5 id="初始化显示"><a href="#初始化显示" class="headerlink" title="初始化显示"></a>初始化显示</h5><ul><li>beforeCreate()</li><li>created()</li><li>beforeMount()</li><li>mounted()</li></ul><h5 id="更新状态-this-xxx-x3D-value"><a href="#更新状态-this-xxx-x3D-value" class="headerlink" title="更新状态: this.xxx &#x3D; value"></a>更新状态: this.xxx &#x3D; value</h5><ul><li>beforeUpdate()</li><li>updated()</li></ul><h5 id="销毁-vue-实例-vm-destory"><a href="#销毁-vue-实例-vm-destory" class="headerlink" title="销毁 vue 实例: vm.$destory()"></a>销毁 vue 实例: vm.$destory()</h5><ul><li>beforeDestory()</li><li>destoryed()</li></ul><h4 id="常用的生命周期方法"><a href="#常用的生命周期方法" class="headerlink" title="常用的生命周期方法"></a>常用的生命周期方法</h4><ol><li>mounted(): 发送 ajax 请求, 启动定时器等异步任务</li><li>beforeDestory(): 做收尾工作, 如: 清除定时器</li></ol><h1 id="Vue-组件化编程"><a href="#Vue-组件化编程" class="headerlink" title="Vue 组件化编程"></a>Vue 组件化编程</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Vue核心&quot;&gt;&lt;a href=&quot;#Vue核心&quot; class=&quot;headerlink&quot; title=&quot;Vue核心&quot;&gt;&lt;/a&gt;Vue核心&lt;/h1&gt;&lt;h2 id=&quot;模板语法&quot;&gt;&lt;a href=&quot;#模板语法&quot; class=&quot;headerlink&quot; title=&quot;模板语法&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="前端学习笔记" scheme="http://example.com/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第一个有封面的文章</title>
     <link href="http://example.com/2022/07/26/%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%89%E5%B0%81%E9%9D%A2%E7%9A%84%E6%96%87%E7%AB%A0/"/>
     <id>http://example.com/2022/07/26/%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%89%E5%B0%81%E9%9D%A2%E7%9A%84%E6%96%87%E7%AB%A0/</id>
     <published>2022-07-26T07:27:20.000Z</published>
-    <updated>2022-07-26T08:00:53.558Z</updated>
+    <updated>2022-10-15T11:42:32.133Z</updated>
     
     
     
     
     
-    <category term="有封面" scheme="http://example.com/tags/%E6%9C%89%E5%B0%81%E9%9D%A2/"/>
+    <category term="测试文章" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
     
   </entry>
   
@@ -36,7 +58,7 @@
     <link href="http://example.com/2022/07/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
     <id>http://example.com/2022/07/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</id>
     <published>2022-07-24T19:24:41.000Z</published>
-    <updated>2022-07-26T07:23:03.853Z</updated>
+    <updated>2022-10-15T11:42:51.526Z</updated>
     
     <content type="html"><![CDATA[<h1 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h1><p>参考文献：<a href="https://www.bilibili.com/video/BV1Yb411a7ty?spm_id_from=333.337.search-card.all.click&amp;vd_source=11a036948a09a7e7ce31371a7b561ff4">https://www.bilibili.com/video/BV1Yb411a7ty?spm_id_from=333.337.search-card.all.click&amp;vd_source=11a036948a09a7e7ce31371a7b561ff4</a></p>]]></content>
     
@@ -48,6 +70,8 @@
     
     
     
+    
+    <category term="测试文章" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
     
   </entry>
   
